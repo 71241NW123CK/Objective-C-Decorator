@@ -18,6 +18,16 @@
 
 @synthesize exampleObject = _exampleObject;
 
++(id)decorateExampleObject:(ExampleObject*)exampleObject withDecoratorStrings:(NSArray*)decoratorStrings
+{
+	__block ExampleObject* result = exampleObject;
+	[decoratorStrings
+		enumerateObjectsUsingBlock:
+			^(NSString* decoratorString, NSUInteger idx, BOOL *stop){result = [[NSClassFromString(decoratorString) alloc] initWithExampleObject:result];}
+	];
+	return result;
+}
+
 -(NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
 	if([[self class] instancesRespondToSelector:aSelector])	return [[self class] instanceMethodSignatureForSelector:aSelector];
@@ -53,7 +63,7 @@
 
 -(NSString*)stringMethod{return [self.exampleObject stringMethod];}
 
--(NSString*)decorations{return [NSString stringWithFormat:@"%@(%@)", NSStringFromClass([self class]), [self.exampleObject decorations]];}
+-(NSString*)decorators{return [NSString stringWithFormat:@"%@(%@)", NSStringFromClass([self class]), [self.exampleObject decorators]];}
 
 -(NSString*)stringValueHelper{return @"";}
 

@@ -36,7 +36,7 @@
 
 -(NSString*)stringMethod{return [NSString stringWithFormat:@"In class %@\nstring:\t%@\nnumber:\t%@", NSStringFromClass([self class]), self.string, self.number];}
 
--(NSString*)decorations{return NSStringFromClass([self class]);}
+-(NSString*)decorators{return NSStringFromClass([self class]);}
 
 -(NSString*)stringValue{return [NSString stringWithFormat:@"{string:%@, number:%@}", self.string, self.number];}
 

@@ -18,21 +18,27 @@
 
 @synthesize array = _array;
 
+-(id)initWithString:(NSString *)string number:(NSNumber *)number
+{
+	if(self = [super initWithString:string number:number])	self.array = [NSArray array];
+	return self;
+}
+
+-(id)initWithExampleObject:(ExampleObject *)exampleObject
+{
+	if(self = [super initWithExampleObject:exampleObject])	self.array = [NSArray array];
+	return self;
+}
+
 -(id)initWithString:(NSString*)string number:(NSNumber*)number array:(NSArray*)array
 {
-	if(self = [super initWithString:string number:number])
-	{
-		self.array = array;
-	}
+	if(self = [super initWithString:string number:number])	self.array = array;
 	return self;
 }
 
 -(id)initWithExampleObject:(ExampleObject *)exampleObject array:(NSArray*)array
 {
-	if(self = [super initWithExampleObject:exampleObject])
-	{
-		self.array = array;
-	}
+	if(self = [super initWithExampleObject:exampleObject])	self.array = array;
 	return self;
 }
 

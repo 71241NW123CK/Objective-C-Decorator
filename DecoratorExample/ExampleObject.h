@@ -18,7 +18,7 @@
 
 -(NSString*)stringMethod;
 
--(NSString*)decorations;
+-(NSString*)decorators;
 
 -(NSString*)stringValue;
 

@@ -18,6 +18,18 @@
 
 @synthesize dictionary = _dictionary;
 
+-(id)initWithString:(NSString*)string number:(NSNumber*)number
+{
+	if(self = [super initWithString:string number:number])	self.dictionary = [NSDictionary dictionary];
+	return self;
+}
+
+-(id)initWithExampleObject:(ExampleObject *)exampleObject
+{
+	if(self = [super initWithExampleObject:exampleObject])	self.dictionary = [NSDictionary dictionary];
+	return self;
+}
+
 -(id)initWithString:(NSString*)string number:(NSNumber*)number dictionary:(NSDictionary*)dictionary
 {
 	if(self = [super initWithString:string number:number])	self.dictionary = dictionary;

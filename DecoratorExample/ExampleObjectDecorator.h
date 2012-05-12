@@ -13,6 +13,8 @@
 
 @property	(nonatomic, readonly, strong)	ExampleObject* exampleObject;
 
++(id)decorateExampleObject:(ExampleObject*)exampleObject withDecoratorStrings:(NSArray*)decoratorStrings;
+
 -(id)initWithExampleObject:(ExampleObject*)exampleObject;
 
 -(NSString*)stringValueHelper;
