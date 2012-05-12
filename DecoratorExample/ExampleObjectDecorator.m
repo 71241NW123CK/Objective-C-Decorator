@@ -20,8 +20,8 @@
 
 -(NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
-	if([[self class] respondsToSelector:aSelector])	return [[self class] instanceMethodSignatureForSelector:aSelector];
-	return [[self.exampleObject class] instanceMethodSignatureForSelector:aSelector];
+	if([[self class] instancesRespondToSelector:aSelector])	return [[self class] instanceMethodSignatureForSelector:aSelector];
+	return [self.exampleObject methodSignatureForSelector:aSelector];
 }
 
 -(void)forwardInvocation:(NSInvocation*)anInvocation
