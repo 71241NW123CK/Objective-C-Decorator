@@ -24,8 +24,6 @@
 @synthesize string = _string;
 @synthesize number = _number;
 
--(NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector{return [[self class] instanceMethodSignatureForSelector:aSelector];}
-
 -(id)initWithString:(NSString*)string number:(NSNumber*)number
 {
 	if(self = [super init])
